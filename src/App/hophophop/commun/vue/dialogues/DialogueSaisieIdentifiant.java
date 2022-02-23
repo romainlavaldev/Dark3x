@@ -5,12 +5,17 @@
 
 package hophophop.commun.vue.dialogues;
 
+import hophophop.commun.modele.Outils;
 import hophophop.commun.vue.Icones;
+import hophophop.etudiant.modele.H3Etudiant;
+
 import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.io.IOException;
+import java.util.Properties;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -87,5 +92,20 @@ public class DialogueSaisieIdentifiant extends Dialogue {
                 boutonAnnuler.doClick();
             }
         });
+
+        //try Parsing XML
+        final String configFile = H3Etudiant.DOSSIER_CONFIGURATION + "config.xml";
+        try {
+            Properties config = Outils.getConfiguration(configFile);
+            String username = config.getProperty("username");
+            String password = config.getProperty("password");
+            if (!username.isBlank() && !password.isBlank()){
+                txtUserName.setText(username);
+                txtPassword.setText(password);
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

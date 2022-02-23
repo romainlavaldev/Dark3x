@@ -43,11 +43,7 @@ import javax.swing.JTree;
 import javax.swing.border.Border;
 import javax.swing.event.TreeSelectionEvent;
 import javax.swing.event.TreeSelectionListener;
-import javax.swing.tree.DefaultMutableTreeNode;
-import javax.swing.tree.DefaultTreeModel;
-import javax.swing.tree.TreeCellRenderer;
-import javax.swing.tree.TreeNode;
-import javax.swing.tree.TreePath;
+import javax.swing.tree.*;
 
 public class Explorateur extends JTree implements ObservateurH3Etudiant {
     private DefaultMutableTreeNode racine;
@@ -376,7 +372,7 @@ public class Explorateur extends JTree implements ObservateurH3Etudiant {
 
     public class ExplorateurCellRenderer extends JLabel implements TreeCellRenderer {
         public ExplorateurCellRenderer() {
-            this.setBackground(new Color(186, 186, 186));
+            this.setBackground(new Color(70, 70, 70));
             this.setFont(H3Commun.LaFonteExplorateur);
         }
 
@@ -398,7 +394,6 @@ public class Explorateur extends JTree implements ObservateurH3Etudiant {
                 this.setIcon(Icones.DOSSIER_16);
             }
 
-            this.setOpaque(selected);
             return this;
         }
     }

@@ -21,8 +21,8 @@ public class RendererError extends JLabel implements TableCellRenderer {
         if (isSelected) {
             this.setBackground(H3Etudiant.COULEUR_ERREUR);
         } else {
-            this.setBackground(Color.WHITE);
-            this.setForeground(Color.BLACK);
+            this.setBackground(Color.BLACK);
+            this.setForeground(Color.WHITE);
         }
 
         if (column == 1) {

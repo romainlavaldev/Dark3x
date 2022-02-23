@@ -1089,7 +1089,7 @@ public abstract class H3Etudiant {
         FICHIER_SON_FIN_CAUSETTE = DOSSIER_SONS + "fin.wav";
         FICHIER_SON_FERMETURE = DOSSIER_SONS + "fermeture.wav";
         FICHIER_SON_MESSAGE = DOSSIER_SONS + "message.wav";
-        COULEUR_ERREUR = new Color(255, 204, 204);
+        COULEUR_ERREUR = new Color(30, 30, 30);
         trace = "";
         questionCourante = 0;
         deconnecterEnQuittant = true;

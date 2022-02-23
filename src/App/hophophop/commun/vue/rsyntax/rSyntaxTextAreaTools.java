@@ -37,8 +37,6 @@ public class rSyntaxTextAreaTools {
         //textArea.setMarginLineColor(new Color(176, 180, 185));
         //textArea.setMarkAllHighlightColor(new Color(107, 129, 137));
         //textArea.setMarkOccurrencesColor(new Color(212, 212, 212));
-        textArea.setAnimateBracketMatching(true);
-        textArea.setMatchedBracketBGColor(new Color(54, 199, 56));
         //textArea.setHyperlinkForeground(new Color(0, 0, 255));
         /*SyntaxScheme scheme = textArea.getSyntaxScheme();
         scheme.getStyle(20).foreground = new Color(0, 0, 0);
@@ -94,6 +92,10 @@ public class rSyntaxTextAreaTools {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+
+        textArea.setAnimateBracketMatching(true);
+        textArea.setMatchedBracketBGColor(new Color(54, 199, 56));
 
         sp.revalidate();
     }

@@ -64,7 +64,7 @@ public class DialogueErreurCompilation extends JDialog {
                     Erreur er = (Erreur)var3.next();
                     List<String> ligne = new ArrayList();
                     ligne.add(er.getLeFichier().getNom());
-                    ligne.add((new Integer(er.getNumeroDeLigne())).toString());
+                    ligne.add(Integer.toString(er.getNumeroDeLigne()));
                     ligne.add(er.getMessageErreur() + "\n" + er.getMessageErreurComplement());
                     this.donnees.add(ligne);
                 }
@@ -128,8 +128,8 @@ public class DialogueErreurCompilation extends JDialog {
         TableColumn col0 = tableau.getColumnModel().getColumn(0);
         TableColumn col1 = tableau.getColumnModel().getColumn(1);
         TableColumn col2 = tableau.getColumnModel().getColumn(2);
-        col0.setPreferredWidth(200);
-        col1.setPreferredWidth(50);
+        col0.setPreferredWidth(100);
+        col1.setPreferredWidth(25);
         col2.setPreferredWidth(600);
         tableau.setGridColor(Color.LIGHT_GRAY);
         RendererError rendererCol0 = new RendererError();
@@ -146,7 +146,7 @@ public class DialogueErreurCompilation extends JDialog {
         panelConsole.add(jsp1);
         this.console.ecrire(sortieDuCompilateur);
         panelConsole.setPreferredSize(new Dimension(650, 100));
-        this.setSize(700, 200);
+        this.setSize(1200, 200);
         this.setResizable(true);
     }
 }
