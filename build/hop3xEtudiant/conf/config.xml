@@ -5,6 +5,8 @@
 	<entry key="port">2750</entry>		
 	<entry key="log-serveur">193.52.29.216</entry>		
 	<entry key="log-port">2752</entry>		
+	<entry key="username"></entry>
+	<entry key="password"></entry>
 	<!--
 		<entry key="serveur">127.0.0.1</entry>
 		<entry key="serveur">193.52.29.216</entry>		
