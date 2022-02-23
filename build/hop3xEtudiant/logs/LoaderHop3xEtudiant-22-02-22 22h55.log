@@ -1,0 +1,4 @@
+Hop3xLog/INFO : Tue Feb 22 22:55:39 CET 2022, Message = Téléchargement du CLient...., SourceClassName = hophophop.loader.Main, SourceMethodName = main
+Hop3xLog/INFO : Tue Feb 22 22:55:39 CET 2022, Message = Chargement : urlFichierClient : http://hop3x.univ-lemans.fr/Hop3xEtudiant.zip // fichierClient : Hop3xEtudiant.zip, SourceClassName = hophophop.loader.Main, SourceMethodName = main
+Hop3xLog/INFO : Tue Feb 22 22:55:40 CET 2022, Message = Extraction du Client........, SourceClassName = hophophop.loader.Main, SourceMethodName = main
+Hop3xLog/INFO : Tue Feb 22 22:55:40 CET 2022, Message = Client ok, SourceClassName = hophophop.loader.Main, SourceMethodName = main

@@ -1,0 +1,4 @@
+# Le Premier argument c'est le répertoire
+cd $1
+# Le second c'est la commande à Lancer
+$2 &

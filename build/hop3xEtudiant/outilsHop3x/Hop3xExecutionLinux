@@ -1,0 +1,16 @@
+#!/bin/bash
+
+#echo "Path : `echo $PATH`\n"
+
+# Si c'est ruby j'affiche sa version et son chemin
+
+if [ ! -z `echo $1 | grep ruby` ]
+then
+	echo -e "Ruby :\tVersion (`ruby -v`) \n\tChemin (`which ruby`)\n"
+	
+fi
+
+echo -e "Exécution de $*\n"
+$*
+echo -e "\n"
+read -p "Appuyez sur Entrée pour continuer ..." resultat

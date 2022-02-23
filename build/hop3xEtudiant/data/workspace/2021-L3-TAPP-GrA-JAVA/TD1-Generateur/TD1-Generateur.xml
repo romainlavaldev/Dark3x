@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROJET NOM="TD1-Generateur" TYPE="Java">
+  <FICHIER>Filtre.java</FICHIER>
+  <FICHIER>Generateur.java</FICHIER>
+  <FICHIER>Test.java</FICHIER>
+</PROJET>
+

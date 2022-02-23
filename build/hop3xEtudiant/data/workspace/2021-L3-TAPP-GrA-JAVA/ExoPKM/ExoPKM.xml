@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROJET NOM="ExoPKM" TYPE="Java">
+  <FICHIER>Terrestre.java</FICHIER>
+  <FICHIER>Sportif.java</FICHIER>
+  <FICHIER>Pokemon.java</FICHIER>
+  <FICHIER>Exo.java</FICHIER>
+  <FICHIER>Casanier.java</FICHIER>
+  <FICHIER>Marin.java</FICHIER>
+  <FICHIER>Croisiere.java</FICHIER>
+</PROJET>
+
