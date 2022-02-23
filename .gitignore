@@ -1,0 +1,4 @@
+build/hop3xEtudiant/data/trace/*
+build/hop3xEtudiant/data/workspace/*
+build/hop3xEtudiant/conf/config.xml
+build/hop3xEtudiant/logs/*
