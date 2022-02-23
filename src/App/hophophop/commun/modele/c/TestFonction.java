@@ -28,13 +28,30 @@ public class TestFonction {
 
     @Override
     public String toString() {
-        String type = switch (this.resultat.getType()) {
+        /*String type = switch (this.resultat.getType()) {
             case "int" -> "%d";
             case "float" -> "%f";
             case "char" -> "%c";
             case "char *" -> "%s";
             default -> this.resultat.getType();
-        };
+        };*/
+
+        String type;
+        if (this.resultat.getType() == "int"){
+            type = "%d";
+        }
+        else if (this.resultat.getType() == "float"){
+            type = "%f";
+        }
+        else if (this.resultat.getType() == "char"){
+            type = "%c";
+        }
+        else if (this.resultat.getType() == "char *"){
+            type = "%s";
+        }else{
+            type = this.resultat.getType();
+        }
+
 
         String fct = this.fonction + "(";
 
