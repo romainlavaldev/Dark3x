@@ -134,6 +134,8 @@ public abstract class Icones {
     public static final Icon TRACE_32;
     public static final Icon DOCUMENT_32;
     public static final Icon DOCUMENTS_32;
+    public static final Icon ZOOM_IN_32;
+    public static final Icon ZOOM_OUT_32;
 
     public Icones() {
     }
@@ -204,6 +206,8 @@ public abstract class Icones {
         NOUVEAU_PROJET_32 = new ImageIcon(loader.getResource("hophophop/commun/vue/icones/32x32/ajouter-dossier-32.png"));
         NOUVEAU_FICHIER_32 = new ImageIcon(loader.getResource("hophophop/commun/vue/icones/32x32/ajouter-fichier-32.png"));
         EXECUTER_32 = new ImageIcon(loader.getResource("hophophop/commun/vue/icones/32x32/executer-32.png"));
+        ZOOM_IN_32 = new ImageIcon(loader.getResource("hophophop/commun/vue/icones/32x32/ZoomAvant-32.png"));
+        ZOOM_OUT_32 = new ImageIcon(loader.getResource("hophophop/commun/vue/icones/32x32/ZoomArriere-32.png"));
         RECHERCHE_AVANT_32 = new ImageIcon(loader.getResource("hophophop/commun/vue/icones/32x32/RechercheAvant-32.png"));
         RECHERCHE_ARRIERE_32 = new ImageIcon(loader.getResource("hophophop/commun/vue/icones/32x32/RechercheArriere-32.png"));
         REMPLACE_32 = new ImageIcon(loader.getResource("hophophop/commun/vue/icones/32x32/remplacer-32.png"));

@@ -7,9 +7,8 @@ package hophophop.etudiant.vue;
 
 import hophophop.commun.vue.Icones;
 import hophophop.etudiant.modele.H3Etudiant;
-import java.awt.Component;
-import java.awt.Cursor;
-import java.awt.Dimension;
+
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
@@ -84,6 +83,24 @@ public class BarreOutils extends JToolBar implements ActionListener {
         this.add(prevButton);
         this.addSeparator();
         this.addSeparator();
+
+        //Ajout boutons zoom
+        JButton zoomInButton = new JButton();
+        zoomInButton.setIcon(Icones.ZOOM_IN_32);
+        zoomInButton.setToolTipText("Zoomer");
+        zoomInButton.setActionCommand("ZoomIn");
+        zoomInButton.addActionListener(this);
+        this.add(zoomInButton);
+
+        JButton zoomOutButton = new JButton();
+        zoomOutButton.setIcon(Icones.ZOOM_OUT_32);
+        zoomOutButton.setToolTipText("Dézoomer");
+        zoomOutButton.setActionCommand("ZoomOut");
+        zoomOutButton.addActionListener(this);
+        this.add(zoomOutButton);
+
+        this.addSeparator();
+        this.addSeparator();
         this.replaceField = new JTextField(20);
         this.replaceField.setMaximumSize(new Dimension(200, 30));
         this.replaceField.setToolTipText("Le texte de remplacement");
@@ -146,33 +163,47 @@ public class BarreOutils extends JToolBar implements ActionListener {
 
     public void actionPerformed(ActionEvent e) {
         String command = e.getActionCommand();
-        SearchContext context = new SearchContext();
-        String text = this.searchField.getText();
-        if (text.length() != 0) {
-            context.setSearchFor(text);
-            context.setMatchCase(this.matchCaseCB.isSelected());
-            context.setRegularExpression(this.regexCB.isSelected());
-            context.setWholeWord(false);
-            RSyntaxTextArea textArea = H3Etudiant.getFenetre().getEditeur().getPageActuelle().getrSyntaxCodeSource();
-            boolean found = true;
-            SearchResult sr;
-            if (!"FindNext".equals(command) && !"FindPrev".equals(command)) {
-                String text2 = this.replaceField.getText();
-                context.setReplaceWith(text2);
-                sr = SearchEngine.replaceAll(textArea, context);
-                int nombre = sr.getCount();
-                H3Etudiant.getLogger().info("Nombre de remplacement effectué " + nombre);
-            } else {
-                boolean forward = "FindNext".equals(command);
-                context.setSearchForward(forward);
-                sr = SearchEngine.find(textArea, context);
-                found = sr.wasFound();
-            }
+        RSyntaxTextArea textArea = H3Etudiant.getFenetre().getEditeur().getPageActuelle().getrSyntaxCodeSource();
 
-            if (!found) {
-                JOptionPane.showMessageDialog(this, "Texte non trouvé");
-            }
+        if ("ZoomIn".equals(command)){
+            Font font = textArea.getFont();
+            float size = font.getSize();
+            textArea.setFont(font.deriveFont(size + 1.0f));
+        }
+        else if ("ZoomOut".equals(command)){
+            Font font = textArea.getFont();
+            float size = font.getSize();
+            textArea.setFont(font.deriveFont(size - 1.0f));
+        }else{
+            SearchContext context = new SearchContext();
+            String text = this.searchField.getText();
+            if (text.length() != 0) {
+                context.setSearchFor(text);
+                context.setMatchCase(this.matchCaseCB.isSelected());
+                context.setRegularExpression(this.regexCB.isSelected());
+                context.setWholeWord(false);
 
+                boolean found = true;
+                SearchResult sr;
+
+
+                if (!"FindNext".equals(command) && !"FindPrev".equals(command)) {
+                    String text2 = this.replaceField.getText();
+                    context.setReplaceWith(text2);
+                    sr = SearchEngine.replaceAll(textArea, context);
+                    int nombre = sr.getCount();
+                    H3Etudiant.getLogger().info("Nombre de remplacement effectué " + nombre);
+                } else {
+                    boolean forward = "FindNext".equals(command);
+                    context.setSearchForward(forward);
+                    sr = SearchEngine.find(textArea, context);
+                    found = sr.wasFound();
+                }
+
+                if (!found) {
+                    JOptionPane.showMessageDialog(this, "Texte non trouvé");
+                }
+            }
         }
     }
 }

@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
 Main-Class: hophophop.etudiant.Main
-Class-Path: flatlaf-2.0.1.jar CodeLabWS.jar rsyntaxtextarea.jar flatlaf-
- intellij-themes-2.0.1.jar jdom.jar
+Class-Path: jdom.jar flatlaf-2.0.1.jar CodeLabWS.jar flatlaf-intellij-th
+ emes-2.0.1.jar rsyntaxtextarea.jar
 
